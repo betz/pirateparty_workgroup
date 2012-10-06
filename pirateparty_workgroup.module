@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * Code for the PirateParty: Workgroup feature.
+ */
+
+include_once 'pirateparty_workgroup.features.inc';
+
+
+function pirateparty_workgroup_menu() {
+  $items['node/%node/blog'] = array(
+    'title' => t('Blog'),
+    'type' => MENU_LOCAL_TASK,
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+function pirateparty_workgroup_menu_alter(&$items) {
+  $items['node/%node/view']['title'] = 'Front';
+}
